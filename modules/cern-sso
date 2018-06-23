@@ -1,0 +1,14 @@
+#%Module
+proc ModulesHelp { } {
+        global version
+        puts stderr "   Setup cern-sso $version"
+    }
+
+set version git
+setenv CERNSSOPYTHON $env(HOME)/devel/cern-sso-python
+prepend-path PATH $env(HOME)/devel/cern-sso-python
+prepend-path PYTHONPATH $env(HOME)/devel/cern-sso-python
+prepend-path PATH $env(HOME)/devel/cern-sso-python/bin
+prepend-path PYTHONPATH $env(HOME)/devel/cern-sso-python/bin
+
+set-alias cernsso_cd "cd $env(HOME)/devel/cern-sso-python"
